@@ -1,0 +1,19 @@
+
+fragment HeroSlide on slide_slide_BlockType {
+    heading
+    id
+    text
+}
+
+fragment HomeEntry on home_home_Entry {
+	hero: slide {
+		...HeroSlide
+	}
+}
+
+query HomePageQuery {
+	entry(section: "home") {
+		...HomeEntry
+	}
+	
+}
